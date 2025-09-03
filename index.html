@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whispermode Chat</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Whispermode Chat 🚀</h1>
+    <ul id="messages"></ul>
+    <input id="m" autocomplete="off" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+      const socket = io("http://localhost:3000");
+
+      // Send message
+      function sendMessage() {
+        const input = document.getElementById("m");
+        socket.emit("chat message", input.value);
+        input.value = "";
+      }
+
+      // Receive messages
+      socket.on("chat message", function (msg) {
+        const li = document.createElement("li");
+        li.textContent = msg;
+        document.getElementById("messages").appendChild(li);
+      });
+    </script>
+  </body>
+</html>
+
