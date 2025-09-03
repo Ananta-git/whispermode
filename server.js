@@ -10,7 +10,7 @@ const app = express();
 // Allowed origins (local + deployed frontend)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-frontend.onrender.com" // 🔥 replace with your actual Render frontend URL
+  "https://whispermode-frontend.onrender.com" // ✅ your actual deployed frontend
 ];
 
 // Enable CORS
