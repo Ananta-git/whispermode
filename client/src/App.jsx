@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 //for local and deployed backend
 const URL = import.meta.env.MODE === "development"
   ? "http://localhost:3000"
-  : "https://your-backend.onrender.com";
+  : "https://whispermode.onrender.com";  // ✅ your backend
 
 const socket = io(URL);
 
